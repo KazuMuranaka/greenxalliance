@@ -1,0 +1,226 @@
+/* =====================================================
+   GREEN X ALLIANCE — 共通スタイル
+   DC PLATFORM JAPAN と同一のデザインシステム
+   ===================================================== */
+:root{
+  --ink:#182720;          /* 緑がかったダーク（フッター） */
+  --paper:#F5FAF3;        /* 若草がかったクールな白 */
+  --green:#1F8A52;        /* プライマリ：明るいグリーン */
+  --moss:#177244;         /* ホバー用のやや濃い緑 */
+  --gold:#63B44E;         /* アクセント：リーフグリーン（旧ゴールド枠） */
+  --leafdark:#3E7D2B;     /* 小さい文字用の濃いリーフ */
+  --deep:#0F3D26;         /* ヒーロー・CTA帯の濃色 */
+  --line:#D8E4D4;
+  --white:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--paper);color:var(--ink);line-height:1.75;font-size:15px;}
+.serif{font-family:'Noto Serif JP',serif;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(28px,5vw,64px);}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+
+/* ---- reveal ---- */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:none;}
+@media (prefers-reduced-motion: reduce){ .reveal{opacity:1 !important;transform:none !important;transition:none;} }
+
+/* ---- header（2段） ---- */
+header{background:var(--deep);border-bottom:2px solid var(--gold);position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgba(15,61,38,.25);}
+.nav-top{display:flex;align-items:center;justify-content:space-between;height:54px;}
+.logo{font-family:'Noto Serif JP',serif;font-weight:700;font-size:20px;color:#F0F7EE;line-height:1.2;}
+.logo em{font-style:normal;color:#8FCE7B;}
+.logo .sub{display:block;font-family:'Noto Sans JP',sans-serif;font-weight:500;font-size:10px;color:#A6C3AC;letter-spacing:.08em;}
+.cta-btn{background:var(--gold);color:var(--deep);padding:9px 18px;font-size:13px;font-weight:700;letter-spacing:.05em;border-radius:2px;}
+.cta-btn:hover{background:#79C463;}
+.nav-menu{display:flex;gap:26px;font-size:13.5px;font-weight:500;align-items:center;height:44px;border-top:1px solid rgba(255,255,255,.14);color:#D5E6D2;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.nav-menu::-webkit-scrollbar{display:none;}
+.nav-menu a{padding:5px 0;border-bottom:2px solid transparent;white-space:nowrap;flex:0 0 auto;}
+.nav-menu a:hover,.nav-menu a.on{border-color:var(--gold);color:#fff;}
+@media(max-width:640px){.nav-menu{gap:20px;font-size:12.5px;}.nav-top{height:50px;}.logo{font-size:17px;}.cta-btn{padding:8px 14px;font-size:12px;}}
+
+/* ---- hero ---- */
+.hero{min-height:380px;padding:28px 0 59px;background:
+  url('assets/hero-solar.jpg') center 62%/cover no-repeat,
+  var(--deep);
+  color:#FFFFFF;}
+.hero-panel{display:inline-block;width:480px;background:rgba(13,52,32,.58);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);border-radius:4px;padding:12px 16px 13px;border-left:3px solid var(--gold);}
+@media(max-width:560px){.hero-panel{width:100%;}.hero .hero-panel h1{font-size:20px;}}
+.hero-panel .eyebrow{margin-bottom:10px;}
+.hero .hero-panel h1{font-size:27px;line-height:1.6;text-shadow:0 1px 6px rgba(10,30,18,.5);}
+.hero .hero-panel .eyebrow{font-size:11px;margin-bottom:8px;}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;color:#A8D89A;margin-bottom:16px;}
+.hero h1{font-size:clamp(26px,4.2vw,42px);line-height:1.5;font-weight:700;}
+.hero h1 .u{border-bottom:3px solid var(--gold);padding-bottom:2px;}
+.hero .lede{margin-top:18px;max-width:640px;font-size:15.5px;line-height:2;color:#CFE3CC;}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;}
+.hc{display:inline-block;padding:13px 26px;border-radius:2px;font-weight:700;font-size:14px;}
+.hc-gold{background:var(--gold);color:var(--deep);}
+.hc-gold:hover{opacity:.9;}
+.hc-line{border:1.5px solid #DCEBD8;color:#DCEBD8;}
+.hc-line:hover{background:#DCEBD8;color:var(--deep);}
+
+/* ---- page hero（下層） ---- */
+.page-hero{padding:46px 0 40px;background:var(--deep);color:#F0F7EE;}
+.page-hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.22em;color:#A8D89A;margin-bottom:10px;}
+.page-hero h1{font-size:clamp(24px,3.4vw,34px);font-weight:700;}
+.page-hero p{margin-top:10px;color:#CFE3CC;max-width:720px;font-size:14.5px;}
+
+/* ---- sections ---- */
+section{padding:64px 0;}
+section.alt{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.sec-head{margin-bottom:34px;}
+.sec-head .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.22em;color:var(--leafdark);margin-bottom:8px;}
+.sec-head h2{font-size:clamp(21px,3vw,28px);font-weight:700;color:var(--green);}
+.sec-head p{margin-top:10px;max-width:760px;color:#4a544e;}
+
+/* ---- cards ---- */
+.grid{display:grid;gap:22px;}
+.g3{grid-template-columns:repeat(3,1fr);}
+.g2{grid-template-columns:repeat(2,1fr);}
+@media(max-width:900px){.g3{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.g3,.g2{grid-template-columns:1fr;}}
+.card{background:var(--white);border:1px solid var(--line);border-radius:3px;padding:24px 22px;}
+section.alt .card{background:var(--paper);}
+.card h3{font-size:16px;font-weight:700;color:var(--green);margin-bottom:8px;}
+.card .tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:var(--leafdark);border:1px solid var(--gold);border-radius:2px;padding:2px 8px;margin-bottom:12px;}
+.card p{font-size:13.5px;color:#4a544e;line-height:1.9;}
+.card .more{display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:var(--green);border-bottom:2px solid var(--gold);}
+
+/* ---- vision list ---- */
+.vlist{display:grid;gap:16px;}
+.vitem{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:3px;padding:18px 22px;display:flex;gap:18px;align-items:center;}
+.vicon{flex:0 0 48px;width:48px;height:48px;}
+.vicon svg{width:100%;height:100%;display:block;}
+.vbody{flex:1;}
+.vitem h3{font-size:15px;font-weight:700;color:var(--green);margin-bottom:4px;}
+.vitem p{font-size:13.5px;color:#4a544e;}
+
+/* ---- structure diagram ---- */
+.structure{display:flex;flex-direction:column;align-items:center;gap:0;}
+.st-box{background:var(--white);border:1.5px solid var(--green);border-radius:3px;padding:16px 26px;text-align:center;max-width:560px;width:100%;}
+.st-box.apex{background:var(--deep);color:#F0F7EE;border-color:var(--deep);}
+.st-box.apex h3{color:#fff;}
+.st-box.apex p{color:#CFE3CC;}
+.st-box h3{font-size:15.5px;font-weight:700;color:var(--green);}
+.st-box p{font-size:12.5px;color:#4a544e;margin-top:4px;}
+.st-arrow{width:2px;height:26px;background:var(--gold);position:relative;}
+.st-arrow::after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--gold);border-bottom:none;}
+.st-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;width:100%;max-width:760px;}
+@media(max-width:600px){.st-row{grid-template-columns:1fr;}}
+.st-row .st-box{max-width:none;}
+
+/* ---- table ---- */
+table.info{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--line);}
+table.info th,table.info td{padding:14px 18px;border-bottom:1px solid var(--line);text-align:left;font-size:14px;vertical-align:top;}
+table.info th{width:180px;background:#E8F1E4;color:var(--leafdark);font-weight:700;white-space:nowrap;}
+@media(max-width:600px){table.info th{width:110px;padding:12px;}table.info td{padding:12px;}}
+
+/* ---- news list ---- */
+.news-list{list-style:none;}
+.news-list li{display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--line);align-items:baseline;flex-wrap:wrap;}
+.news-list .date{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--leafdark);white-space:nowrap;}
+.news-list .cat{font-size:11px;font-weight:700;color:#fff;background:var(--moss);border-radius:2px;padding:2px 8px;white-space:nowrap;}
+.news-list .ttl{font-size:14px;font-weight:500;}
+
+/* ---- steps ---- */
+.steps{display:grid;gap:16px;counter-reset:step;}
+.step{background:var(--white);border:1px solid var(--line);border-radius:3px;padding:18px 22px 18px 64px;position:relative;counter-increment:step;}
+.step::before{content:counter(step,decimal-leading-zero);position:absolute;left:18px;top:16px;font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:600;color:var(--leafdark);}
+.step h3{font-size:15px;font-weight:700;color:var(--green);margin-bottom:4px;}
+.step p{font-size:13.5px;color:#4a544e;}
+
+/* ---- form ---- */
+.form{background:var(--white);border:1px solid var(--line);border-radius:3px;padding:30px;max-width:680px;}
+.form label{display:block;font-size:13.5px;font-weight:700;color:var(--green);margin:18px 0 6px;}
+.form label:first-child{margin-top:0;}
+.form .req{color:#A0522D;font-size:11px;margin-left:6px;}
+.form input,.form select,.form textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:2px;font:inherit;font-size:14px;background:var(--paper);}
+.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--gold);outline-offset:0;border-color:var(--gold);}
+.form textarea{min-height:150px;resize:vertical;}
+.form button{margin-top:24px;background:var(--green);color:#fff;border:none;padding:14px 34px;border-radius:2px;font-size:14.5px;font-weight:700;cursor:pointer;font-family:inherit;}
+.form button:hover{opacity:.9;}
+.form .note{font-size:12px;color:#7a766a;margin-top:14px;line-height:1.8;}
+
+/* ---- cta band ---- */
+.cta-band{background:var(--deep);color:#F0F7EE;text-align:center;padding:56px 0;}
+.cta-band h2{font-size:clamp(20px,3vw,27px);font-weight:700;margin-bottom:12px;}
+.cta-band p{color:#CFE3CC;max-width:640px;margin:0 auto 24px;font-size:14.5px;}
+
+/* ---- prose ---- */
+.prose{max-width:820px;}
+.prose h3{font-size:17px;color:var(--green);margin:30px 0 10px;font-weight:700;}
+.prose p{margin-bottom:14px;color:#333d38;}
+.prose ul{margin:0 0 14px 22px;color:#333d38;}
+.prose li{margin-bottom:6px;}
+
+/* ---- footer（4カラム・ダーク） ---- */
+footer{background:var(--ink);color:#9FB3A4;font-size:12.5px;padding:52px 0 32px;}
+.f-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:36px;margin-bottom:32px;}
+.f-brand .flogo{font-family:'Noto Serif JP',serif;font-weight:700;font-size:17px;color:#E4F0DF;}
+.f-brand .flogo em{font-style:normal;color:var(--gold);}
+.f-brand p{line-height:1.9;margin:10px 0 16px;}
+.f-cta{display:inline-block;background:var(--gold);color:var(--deep);padding:9px 18px;border-radius:2px;font-weight:700;font-size:12.5px;}
+.f-cta:hover{opacity:.9;color:var(--deep);}
+footer h5{color:#E4F0DF;font-size:13px;margin-bottom:12px;font-weight:700;}
+footer ul{list-style:none;}
+footer li{padding:4px 0;}
+footer a:hover{color:#fff;}
+.f-note{border-top:1px solid #2A4033;padding-top:20px;line-height:1.9;}
+.f-note b{color:#C9D8C4;font-weight:500;}
+.f-bottom{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid #2A4033;margin-top:22px;padding-top:18px;color:#8CA192;}
+@media(max-width:900px){.f-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.f-grid{grid-template-columns:1fr;}}
+
+/* ---- 事業推進フロー・実施フロー ---- */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.flow5{grid-template-columns:repeat(5,1fr);}
+.fbox{background:#E8F1E4;border:1px solid var(--line);border-radius:3px;padding:14px 10px;text-align:center;font-size:13px;font-weight:700;color:var(--deep);position:relative;line-height:1.6;}
+.fbox b{font-size:14px;}
+.fbox.dark{background:var(--green);border-color:var(--green);color:#fff;}
+.fbox:not(:last-child)::after{content:"→";position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:var(--leafdark);font-weight:700;z-index:1;}
+@media(max-width:700px){.flow,.flow5{grid-template-columns:1fr;}.fbox:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-15px;transform:translateX(-50%);}}
+
+/* ---- 実施内容ミニグリッド ---- */
+.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+@media(max-width:700px){.mini-grid{grid-template-columns:1fr;}}
+.mini{background:var(--white);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:3px;padding:12px 16px;font-size:13.5px;font-weight:700;color:var(--deep);}
+section.alt .mini{background:var(--paper);}
+
+/* ---- 画像ボタン ---- */
+.img-btn{display:inline-block;transition:transform .15s ease,filter .15s ease;}
+.img-btn:hover{transform:translateY(-2px);filter:brightness(1.07);}
+.img-btn img{display:block;margin:0 auto;}
+
+/* ---- カード見出し（アイコン付き） ---- */
+.card-head{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
+.card-head h3{margin-bottom:0;}
+.cicon{flex:0 0 38px;width:38px;height:38px;}
+.cicon svg{width:100%;height:100%;display:block;}
+
+/* ---- 左アイコン型カード ---- */
+.card-icon{display:flex;gap:18px;align-items:center;}
+.cicon-l{flex:0 0 46px;width:46px;height:46px;}
+.cicon-l svg{width:100%;height:100%;display:block;}
+.cbody{flex:1;}
+@media(max-width:400px){.card-icon{gap:14px;}.cicon-l{flex:0 0 38px;width:38px;height:38px;}}
+
+/* ---- セクション見出しアイコン ---- */
+.sec-head-icon{display:flex;align-items:center;gap:14px;margin-bottom:8px;}
+.sec-head-icon h2{margin-bottom:0;}
+.shicon{flex:0 0 44px;width:44px;height:44px;}
+.shicon svg{width:100%;height:100%;display:block;}
+
+/* ---- セクション仕切りライン ---- */
+.sec-divider{height:5px;background:linear-gradient(90deg,var(--deep) 0%,var(--green) 45%,var(--gold) 100%);}
+
+/* ---- DC PLATFORM 横長カード ---- */
+.dcp-card{display:flex;align-items:center;gap:36px;padding:34px 38px;}
+.dcp-logo{flex:0 0 380px;}
+.dcp-logo img{width:100%;height:auto;display:block;}
+.dcp-card .cbody h3{font-size:18px;}
+.dcp-card .cbody p{font-size:14.5px;}
+@media(max-width:760px){.dcp-card{flex-direction:column;gap:20px;padding:26px 22px;}.dcp-logo{flex:none;width:100%;max-width:380px;}}
